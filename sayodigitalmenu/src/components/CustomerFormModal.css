@@ -1,0 +1,133 @@
+.customer-modal__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 60;
+}
+
+.customer-modal {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  max-width: 420px;
+  width: calc(100% - 32px);
+  border: none;
+  border-radius: 24px;
+  padding: 24px 24px 20px;
+  background: var(--sayo-surface-elevated);
+  color: var(--sayo-cream);
+  box-shadow: var(--ios-shadow-lg);
+  z-index: 61;
+}
+
+.customer-modal__close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  color: var(--sayo-creamMuted);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.customer-modal__title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+
+.customer-modal__subtitle {
+  margin: 0 0 16px;
+  font-size: 0.9rem;
+  color: var(--sayo-creamMuted);
+}
+
+.customer-modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.customer-modal__field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.85rem;
+}
+
+.customer-modal__field-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.customer-modal__field input,
+.customer-modal__field textarea {
+  border-radius: 999px;
+  border: 1px solid var(--sayo-border);
+  background: var(--sayo-surface);
+  padding: 8px 12px;
+  color: var(--sayo-cream);
+  font-size: 0.9rem;
+}
+
+.customer-modal__field textarea {
+  border-radius: 16px;
+  resize: vertical;
+}
+
+.customer-modal__error {
+  color: #f97373;
+  font-size: 0.8rem;
+}
+
+.customer-modal__success {
+  color: var(--sayo-creamMuted);
+  font-size: 0.8rem;
+}
+
+.customer-modal__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.customer-modal__btn {
+  border-radius: 999px;
+  padding: 8px 18px;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.customer-modal__btn--secondary {
+  background: transparent;
+  color: var(--sayo-creamMuted);
+  border: 1px solid var(--sayo-border);
+}
+
+.customer-modal__btn--primary {
+  background: var(--sayo-accent);
+  color: #111827;
+}
+
+.hero__cta-btn {
+  margin-top: 16px;
+  border-radius: 999px;
+  padding: 10px 22px;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  background: rgba(212, 165, 116, 0.95);
+  color: #111827;
+  box-shadow: var(--ios-shadow-md);
+}
+
+.hero__cta-btn:hover {
+  background: rgba(212, 165, 116, 1);
+}
+

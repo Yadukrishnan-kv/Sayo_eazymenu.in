@@ -1,0 +1,103 @@
+/* Full-screen intro video – no scroll, fixed viewport */
+.intro-video {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--sayo-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-video__media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.intro-video__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  pointer-events: none;
+}
+
+.intro-video__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ios-space-6);
+  padding: var(--ios-space-6);
+  max-width: 560px;
+  text-align: center;
+}
+
+.intro-video__logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ios-space-4);
+  flex-wrap: wrap;
+  line-height: 0;
+}
+
+.intro-video__logo {
+  display: block;
+  width: auto;
+  height: 56px;
+  max-width: 140px;
+  object-fit: contain;
+  object-position: center;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
+}
+
+@media (min-width: 600px) {
+  .intro-video__logo {
+    height: 72px;
+    max-width: 180px;
+  }
+}
+
+.intro-video__story {
+  font-size: var(--ios-text-body);
+  line-height: 1.7;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+
+.intro-video__continue {
+  padding: var(--ios-space-3) var(--ios-space-6);
+  font-size: var(--ios-text-body);
+  font-weight: 600;
+  color: #fff;
+  background: #aa5e20;
+  border: none;
+  border-radius: var(--ios-radius-full);
+  cursor: pointer;
+  transition: background var(--ios-duration-fast), transform var(--ios-duration-fast);
+  box-shadow: 0 4px 16px rgba(170, 94, 32, 0.4);
+}
+
+.intro-video__continue:hover {
+  background: #b86a28;
+  transform: scale(1.03);
+}
+
+.intro-video__continue:focus-visible {
+  outline: 2px solid var(--sayo-on-accent);
+  outline-offset: 3px;
+}

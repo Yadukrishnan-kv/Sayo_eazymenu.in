@@ -1,0 +1,87 @@
+/**
+ * SAYO Digital Menu — iOS 26 Design System
+ * Soft glassmorphism, depth, spring motion, premium spacing
+ */
+
+:root {
+  /* iOS 26 radii (large, refined) */
+  --ios-radius-xs: 8px;
+  --ios-radius-sm: 12px;
+  --ios-radius-md: 16px;
+  --ios-radius-lg: 20px;
+  --ios-radius-xl: 24px;
+  --ios-radius-2xl: 28px;
+  --ios-radius-full: 9999px;
+
+  /* Spring animation (Apple-like) */
+  --ios-spring: 0.34, 1.56, 0.64, 1;
+  --ios-spring-snappy: 0.2, 0.8, 0.2, 1;
+  --ios-spring-gentle: 0.33, 1, 0.68, 1;
+  --ios-spring-bounce: 0.68, -0.55, 0.265, 1.55;
+  --ios-duration-instant: 0.15s;
+  --ios-duration-fast: 0.25s;
+  --ios-duration-normal: 0.4s;
+  --ios-duration-slow: 0.55s;
+
+  /* 8pt grid spacing */
+  --ios-space-1: 4px;
+  --ios-space-2: 8px;
+  --ios-space-3: 12px;
+  --ios-space-4: 16px;
+  --ios-space-5: 20px;
+  --ios-space-6: 24px;
+  --ios-space-8: 32px;
+  --ios-space-10: 40px;
+  --ios-space-12: 48px;
+  --ios-space-16: 64px;
+
+  /* Glass / blur */
+  --ios-blur-sm: 12px;
+  --ios-blur-md: 20px;
+  --ios-blur-lg: 28px;
+  --ios-blur-xl: 40px;
+  --ios-glass-bg: rgba(255, 255, 255, 0.08);
+  --ios-glass-border: rgba(255, 255, 255, 0.12);
+
+  /* Soft shadows (no harsh drop shadows) */
+  --ios-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --ios-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
+  --ios-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.06);
+  --ios-shadow-glow: 0 0 40px rgba(212, 165, 116, 0.15);
+
+  /* Typography scale (refined) */
+  --ios-text-caption: 0.75rem;
+  --ios-text-footnote: 0.8125rem;
+  --ios-text-subhead: 0.9375rem;
+  --ios-text-body: 1rem;
+  --ios-text-callout: 1.0625rem;
+  --ios-text-title3: 1.25rem;
+  --ios-text-title2: 1.5rem;
+  --ios-text-title1: 1.75rem;
+  --ios-text-large: 2.25rem;
+  --ios-text-display: clamp(2.5rem, 8vw, 4rem);
+}
+
+[data-theme="dark"] {
+  --ios-glass-bg: rgba(0, 0, 0, 0.25);
+  --ios-glass-border: rgba(255, 255, 255, 0.06);
+  --ios-shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.25);
+  --ios-shadow-md: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --ios-shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.35);
+  --ios-shadow-glow: 0 0 48px rgba(212, 165, 116, 0.12);
+}
+
+/* Glass panel utility */
+.ios-glass {
+  background: var(--ios-glass-bg);
+  backdrop-filter: blur(var(--ios-blur-md));
+  -webkit-backdrop-filter: blur(var(--ios-blur-md));
+  border: 1px solid var(--ios-glass-border);
+}
+
+.ios-glass-strong {
+  background: var(--sayo-surface);
+  backdrop-filter: blur(var(--ios-blur-lg));
+  -webkit-backdrop-filter: blur(var(--ios-blur-lg));
+  border: 1px solid var(--sayo-border);
+}

@@ -1,0 +1,127 @@
+.filter-bar {
+  position: sticky;
+  top: 57px;
+  z-index: calc(var(--z-sticky) - 1);
+  background: var(--sayo-surface);
+  border-bottom: 1px solid var(--sayo-border);
+  padding: var(--space-md) var(--space-lg);
+}
+
+.filter-bar__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-lg);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.filter-bar__group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.filter-bar__label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--sayo-text-muted);
+  white-space: nowrap;
+}
+
+.filter-bar__chips {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.filter-bar__chips--wrap {
+  flex-wrap: wrap;
+}
+
+.filter-bar__chip {
+  padding: var(--space-xs) var(--space-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--sayo-text-muted);
+  background: var(--sayo-surface-elevated);
+  border: 1px solid var(--sayo-border);
+  border-radius: var(--radius-md);
+  transition: color var(--duration-fast), background var(--duration-fast), border-color var(--duration-fast);
+}
+
+.filter-bar__chip:hover {
+  color: var(--sayo-text);
+  border-color: var(--sayo-accent);
+}
+
+.filter-bar__chip--active {
+  color: var(--sayo-bg);
+  background: var(--sayo-accent);
+  border-color: var(--sayo-accent);
+}
+
+.filter-bar__chip--sm {
+  padding: var(--space-xs) var(--space-sm);
+  font-size: 0.8125rem;
+}
+
+.filter-bar__select {
+  padding: var(--space-xs) var(--space-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--sayo-text);
+  background: var(--sayo-surface-elevated);
+  border: 1px solid var(--sayo-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  min-width: 140px;
+}
+
+.filter-bar__select:focus-visible {
+  outline: none;
+  border-color: var(--sayo-accent);
+}
+
+.filter-bar__clear {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--sayo-accent);
+  margin-inline-start: auto;
+}
+
+.filter-bar__clear:hover {
+  text-decoration: underline;
+}
+
+.filter-bar__count {
+  max-width: 1400px;
+  margin: var(--space-sm) auto 0;
+  font-size: 0.8125rem;
+  color: var(--sayo-text-muted);
+}
+
+@media (max-width: 768px) {
+  .filter-bar {
+    top: 0;
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .filter-bar__inner {
+    gap: var(--space-md);
+  }
+
+  .filter-bar__group {
+    width: 100%;
+  }
+
+  .filter-bar__select {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .filter-bar__clear {
+    margin-inline-start: 0;
+    width: 100%;
+  }
+}

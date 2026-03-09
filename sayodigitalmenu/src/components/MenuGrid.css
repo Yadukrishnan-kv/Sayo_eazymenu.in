@@ -1,0 +1,127 @@
+.menu-grid {
+  padding: var(--ios-space-10) var(--ios-space-5);
+}
+
+.menu-grid__inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.menu-grid__section {
+  margin-bottom: var(--ios-space-10);
+}
+
+.menu-grid__section:last-child {
+  margin-bottom: 0;
+}
+
+.menu-grid__section-hero {
+  width: 100%;
+  margin-bottom: 0;
+  /* No background box; heading spacing is handled on the title element */
+}
+
+.menu-grid__section-hero::before {
+  content: none;
+}
+
+.menu-grid__section-title {
+  font-family: var(--font-display);
+  font-size: var(--ios-text-title1);
+  font-weight: 800;
+  color: var(--sayo-text);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0 0 var(--ios-space-4) 0;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  text-align: left;
+  text-shadow: none;
+}
+
+.menu-grid__section-hero--combos {
+  background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=85');
+}
+
+.menu-grid__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--ios-space-5);
+}
+
+@media (min-width: 560px) {
+  .menu-grid__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .menu-grid__list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--ios-space-6);
+  }
+}
+
+@media (min-width: 1200px) {
+  .menu-grid__list {
+    gap: var(--ios-space-8);
+  }
+}
+
+.menu-grid__empty,
+.menu-grid__loading {
+  text-align: center;
+  padding: var(--ios-space-16);
+  color: var(--sayo-text-muted);
+  font-size: var(--ios-text-callout);
+}
+
+/* List view (Amazon-style horizontal rows)
+   Overrides grid layout – 1 col on mobile, 2 on wider screens */
+.menu-grid.menu-grid--list .menu-grid__list {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: var(--ios-space-3);
+}
+
+@media (min-width: 768px) {
+  .menu-grid.menu-grid--list .menu-grid__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+/* Horizontal card layout: image left, content right */
+.menu-grid.menu-grid--list .menu-grid__list .dish-card .dish-card__trigger {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: stretch;
+  text-align: start;
+}
+
+.menu-grid.menu-grid--list .menu-grid__list .dish-card .dish-card__image-wrap {
+  width: 140px;
+  min-width: 140px;
+  aspect-ratio: 1;
+  flex-shrink: 0;
+}
+
+.menu-grid.menu-grid--list .menu-grid__list .dish-card .dish-card__body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--ios-space-4);
+}
+
+.menu-grid.menu-grid--list .menu-grid__list .dish-card .dish-card__desc {
+  -webkit-line-clamp: 2;
+}
+
+@media (min-width: 600px) {
+  .menu-grid.menu-grid--list .menu-grid__list .dish-card .dish-card__image-wrap {
+    width: 180px;
+    min-width: 180px;
+  }
+}

@@ -1,0 +1,36 @@
+.dish-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ios-space-2);
+  margin-bottom: var(--ios-space-4);
+}
+
+.dish-tags--compact {
+  gap: var(--ios-space-1);
+  margin-bottom: var(--ios-space-2);
+}
+
+.dish-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: var(--ios-text-footnote);
+  color: var(--sayo-text);
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid var(--sayo-borderSubtle);
+  box-shadow: var(--ios-shadow-xs);
+  backdrop-filter: blur(var(--ios-blur-sm));
+}
+
+.dish-tag-pill__icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.dish-tag-pill__label {
+  white-space: nowrap;
+}
+

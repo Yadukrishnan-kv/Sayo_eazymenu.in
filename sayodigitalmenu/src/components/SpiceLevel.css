@@ -1,0 +1,46 @@
+.spice-level {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.spice-level__icon {
+  font-size: 1em;
+  line-height: 1;
+  opacity: 0.9;
+}
+
+.spice-level__chilis {
+  display: inline-flex;
+  align-items: center;
+  gap: 1px;
+}
+
+.spice-level__chili {
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  background: #d2d2d2;
+  transition: background 0.15s ease;
+}
+
+/* Red variations: light → dark as spice level increases */
+.spice-level__chili--on.spice-level__chili--n1 {
+  background: #f5b7b1; /* light red – mild */
+}
+.spice-level__chili--on.spice-level__chili--n2 {
+  background: #ec7063; /* medium red */
+}
+.spice-level__chili--on.spice-level__chili--n3 {
+  background: #e74c3c; /* red – hot */
+}
+.spice-level__chili--on.spice-level__chili--n4 {
+  background: #c0392b; /* dark red – very hot */
+}
+
+/* Optional: card-specific sizing */
+.dish-card .spice-level__chili,
+.star-card .spice-level__chili {
+  width: 0.45em;
+  height: 0.45em;
+}

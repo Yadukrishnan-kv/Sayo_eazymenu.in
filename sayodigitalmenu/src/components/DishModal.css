@@ -1,0 +1,286 @@
+.dish-modal__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal-backdrop);
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(var(--ios-blur-sm));
+  -webkit-backdrop-filter: blur(var(--ios-blur-sm));
+}
+
+.dish-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: auto !important;
+  right: 0 !important;
+  width: 100%;
+  max-width: min(600px, 90vw);
+  height: 100vh;
+  z-index: var(--z-modal);
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  border-left: 1px solid var(--sayo-border);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.2);
+  direction: ltr;
+}
+
+.dish-modal--glass {
+  background: var(--sayo-surface);
+  border: 1px solid var(--sayo-border);
+}
+
+.dish-modal__inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  cursor: grab;
+}
+
+.dish-modal__inner:active {
+  cursor: grabbing;
+}
+
+.dish-modal__close {
+  position: sticky;
+  top: var(--ios-space-4);
+  align-self: flex-end;
+  z-index: 2;
+  width: 48px;
+  height: 48px;
+  margin: var(--ios-space-4) var(--ios-space-4) 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--sayo-text);
+  background: var(--sayo-surface);
+  border: 2px solid var(--sayo-border);
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  transition: background var(--ios-duration-fast), transform var(--ios-duration-fast);
+}
+
+.dish-modal__close:hover {
+  background: var(--sayo-surface-elevated);
+  transform: scale(1.05);
+}
+
+.dish-modal__close:focus-visible {
+  outline: 2px solid var(--sayo-accent);
+  outline-offset: 2px;
+}
+
+.dish-modal__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: var(--sayo-surface-elevated);
+  flex-shrink: 0;
+}
+
+.dish-modal__carousel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.dish-modal__carousel-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dish-modal__img-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: var(--sayo-text);
+  background: rgba(0, 0, 0, 0.35);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background var(--ios-duration-fast);
+}
+.dish-modal__img-nav:hover {
+  background: rgba(0, 0, 0, 0.55);
+}
+.dish-modal__img-nav--prev { left: var(--ios-space-3); }
+.dish-modal__img-nav--next { right: var(--ios-space-3); }
+
+.dish-modal__carousel-dots {
+  position: absolute;
+  bottom: var(--ios-space-3);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: var(--ios-space-2);
+  z-index: 1;
+}
+
+.dish-modal__carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 0;
+  transition: background var(--ios-duration-fast), transform var(--ios-duration-fast);
+}
+
+.dish-modal__carousel-dot--active {
+  background: var(--sayo-text);
+  transform: scale(1.2);
+}
+
+.dish-modal__badge {
+  position: absolute;
+  top: var(--ios-space-4);
+  inset-inline-start: var(--ios-space-4);
+  padding: var(--ios-space-2) var(--ios-space-4);
+  font-size: var(--ios-text-footnote);
+  font-weight: 600;
+  background: var(--sayo-gold);
+  color: var(--sayo-bg);
+  border-radius: var(--ios-radius-full);
+  box-shadow: var(--ios-shadow-sm);
+}
+
+.dish-modal__content {
+  padding: var(--ios-space-6);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+.dish-modal__title {
+  font-family: var(--font-display);
+  font-size: clamp(var(--ios-text-title2), 2.5vw, var(--ios-text-title1));
+  font-weight: 600;
+  color: var(--sayo-text);
+  margin-bottom: var(--ios-space-3);
+  line-height: 1.3;
+}
+
+.dish-modal__desc {
+  font-size: var(--ios-text-body);
+  color: var(--sayo-text-muted);
+  line-height: 1.6;
+  margin-bottom: var(--ios-space-5);
+  flex: 1;
+}
+
+.dish-modal__ingredients {
+  font-size: var(--ios-text-subhead);
+  color: var(--sayo-text-muted);
+  margin-bottom: var(--ios-space-4);
+}
+
+.dish-modal__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--ios-space-4);
+  margin-bottom: var(--ios-space-5);
+}
+
+.dish-modal__price {
+  font-size: var(--ios-text-title3);
+  font-weight: 600;
+  color: var(--sayo-accent);
+}
+
+.dish-modal__kcal {
+  font-size: var(--ios-text-subhead);
+  color: var(--sayo-text-muted);
+}
+
+.dish-modal__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--ios-space-4) var(--ios-space-8);
+  font-weight: 600;
+  font-size: var(--ios-text-callout);
+  background: var(--sayo-accent);
+  color: var(--sayo-bg);
+  border-radius: var(--ios-radius-lg);
+  transition: background var(--ios-duration-normal), transform var(--ios-duration-fast);
+  box-shadow: var(--ios-shadow-sm);
+}
+
+.dish-modal__cta:hover {
+  background: var(--sayo-accent-soft);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.dish-modal__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--sayo-text);
+  background: var(--ios-glass-bg);
+  backdrop-filter: blur(var(--ios-blur-md));
+  border: 1px solid var(--ios-glass-border);
+  border-radius: 50%;
+  transition: background var(--ios-duration-fast), opacity var(--ios-duration-fast);
+  z-index: 2;
+}
+
+.dish-modal__nav:hover:not(:disabled) {
+  background: var(--sayo-surface-elevated);
+}
+
+.dish-modal__nav:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.dish-modal__nav--prev {
+  left: var(--ios-space-3);
+}
+
+.dish-modal__nav--next {
+  right: var(--ios-space-3);
+}
+
+@media (max-width: 768px) {
+  .dish-modal {
+    max-width: 100vw;
+  }
+
+  .dish-modal__close {
+    width: 52px;
+    height: 52px;
+    font-size: 2rem;
+    margin: var(--ios-space-3) var(--ios-space-3) 0 auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  }
+
+  .dish-modal__content {
+    padding: var(--ios-space-5);
+  }
+}

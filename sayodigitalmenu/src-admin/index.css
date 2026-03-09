@@ -1,0 +1,184 @@
+/* SAYO Design Tokens — aligned with digital menu (https://sayo-online-menu.netlify.app) */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dark theme (default) — matches digital menu */
+:root,
+[data-theme="dark"] {
+  --sayo-bg: #1a1512;
+  --sayo-surface: #252019;
+  --sayo-surface-elevated: #2d2620;
+  --sayo-border: #3d3329;
+  --sayo-border-subtle: rgba(61, 51, 41, 0.4);
+  --sayo-text: #f5f0eb;
+  --sayo-text-muted: #beb3b3;
+  --sayo-accent: #9a6b3d;
+  --sayo-accent-soft: #805430;
+  --sayo-gold: #70AC44;
+  --sayo-on-accent: #FCF1E7;
+  /* Admin panel aliases */
+  --sayo-dark: #1a1512;
+  --sayo-darker: #1a1512;
+  --sayo-surface-hover: #2d2620;
+  --sayo-muted: #beb3b3;
+  --sayo-gold-light: #805430;
+  --sayo-gold-dark: #6b4528;
+  --sayo-cream: #f5f0eb;
+  --sayo-cream-muted: #beb3b3;
+}
+
+/* Light theme — matches digital menu */
+[data-theme="light"] {
+  --sayo-bg: #ffffff;
+  --sayo-surface: #f8f8f8;
+  --sayo-surface-elevated: #f0f0f0;
+  --sayo-border: #e8e8e8;
+  --sayo-border-subtle: rgba(0, 0, 0, 0.08);
+  --sayo-text: #2d2520;
+  --sayo-text-muted: #5D3D22;
+  --sayo-accent: #805430;
+  --sayo-accent-soft: #6b4528;
+  --sayo-gold: #427037;
+  --sayo-on-accent: #FCF1E7;
+  /* Admin panel aliases */
+  --sayo-dark: #ffffff;
+  --sayo-darker: #f8f8f8;
+  --sayo-surface-hover: #f0f0f0;
+  --sayo-muted: #5D3D22;
+  --sayo-gold-light: #6b4528;
+  --sayo-gold-dark: #5a3a20;
+  --sayo-cream: #2d2520;
+  --sayo-cream-muted: #5D3D22;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  body {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    @apply antialiased;
+    background-color: var(--sayo-bg);
+    color: var(--sayo-text);
+    min-height: 100vh;
+  }
+  *:focus-visible {
+    outline: 2px solid var(--sayo-accent);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    background-color: var(--sayo-accent);
+    color: var(--sayo-on-accent);
+    @apply font-medium px-6 py-2.5 rounded-full transition-colors duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary:hover:not(:disabled) {
+    background-color: var(--sayo-accent-soft);
+  }
+  .btn-primary:focus-visible {
+    outline: 2px solid var(--sayo-accent);
+    outline-offset: 2px;
+  }
+  .btn-secondary {
+    background-color: var(--sayo-surface);
+    border: 1px solid var(--sayo-border);
+    color: var(--sayo-text);
+    @apply font-medium px-6 py-2.5 rounded-full transition-colors duration-200;
+  }
+  .btn-secondary:hover {
+    background-color: var(--sayo-surface-hover);
+    border-color: var(--sayo-accent);
+  }
+  .btn-secondary:focus-visible {
+    outline: 2px solid var(--sayo-accent);
+    outline-offset: 2px;
+  }
+  .btn-ghost {
+    color: var(--sayo-text-muted);
+    @apply px-4 py-2 rounded-full transition-colors duration-200;
+  }
+  .btn-ghost:hover {
+    color: var(--sayo-accent);
+    background-color: var(--sayo-surface-hover);
+  }
+  .btn-ghost:focus-visible {
+    outline: 2px solid var(--sayo-accent);
+    outline-offset: 2px;
+  }
+  .modal-footer-glass {
+    background: rgba(37, 32, 25, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  [data-theme="light"] .modal-footer-glass {
+    background: rgba(248, 248, 248, 0.7);
+  }
+  .input-field {
+    background-color: var(--sayo-surface);
+    border: 1px solid var(--sayo-border);
+    color: var(--sayo-text);
+    @apply w-full rounded-lg px-4 py-2.5 transition-colors duration-200;
+  }
+  .input-field::placeholder {
+    color: var(--sayo-text-muted);
+  }
+  .input-field:focus {
+    border-color: var(--sayo-accent);
+    outline: none;
+    box-shadow: 0 0 0 1px var(--sayo-accent);
+  }
+  .card {
+    background-color: var(--sayo-surface);
+    border: 1px solid var(--sayo-border);
+    @apply rounded-xl p-6;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
+  }
+}
+
+/* Scrollbar — matches digital menu */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--sayo-border);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--sayo-text-muted);
+}
+
+/* Drawer slide-in from right */
+@keyframes drawer-slide-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.animate-drawer-in {
+  animation: drawer-slide-in 0.3s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary,
+  .btn-secondary,
+  .btn-ghost,
+  .input-field {
+    transition: none;
+  }
+  .animate-drawer-in {
+    animation: none;
+  }
+}
