@@ -35,9 +35,7 @@ function App() {
       <a href="#menu-grid" className="skip-link">
         Skip to menu
       </a>
-      <a href="/admin/login" className="app-shell__admin-link" aria-label="Admin login">
-        Admin
-      </a>
+    
       <div className="app-body">
         <FilterPanel />
         <main className="app-content">
